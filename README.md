@@ -1,38 +1,66 @@
-# DIO - Trilha .NET - Fundamentos
-www.dio.me
+# WEX - End to End Engineering -> 1° desafio: Sistema de Estacionamento
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO.
+> Projeto desenvolvido como parte do **desafio proposto na Trilha .NET – Fundamentos ** da [DIO](https://www.dio.me/).
 
-## Contexto
-Você foi contratado para construir um sistema para um estacionamento, que será usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
+---
 
-## Proposta
-Você precisará construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
-![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
+## Descrição
 
-A classe contém três variáveis, sendo:
+Este projeto consiste em um **sistema de gerenciamento de estacionamento** em console, com as seguintes funcionalidades:
 
-**precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
+* Cadastrar um veículo
+* Remover um veículo (calculando o valor a ser pago)
+* Listar veículos estacionados
 
-**precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
+A proposta foi construída com base nos conhecimentos adquiridos no módulo de Fundamentos da trilha .NET.
 
-**veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
+---
 
-A classe contém três métodos, sendo:
+## Estrutura da Classe `Estacionamento`
 
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
+A classe principal possui:
 
-**RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
+### Propriedades
 
-**ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
+| Nome           | Tipo           | Descrição                                     |
+| -------------- | -------------- | --------------------------------------------- |
+| `precoInicial` | `decimal`      | Valor fixo cobrado na entrada                 |
+| `precoPorHora` | `decimal`      | Valor cobrado por cada hora de permanência    |
+| `veiculos`     | `List<string>` | Lista com as placas dos veículos estacionados |
 
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
-1. Cadastrar veículo
-2. Remover veículo
-3. Listar veículos
-4. Encerrar
+### Métodos
+
+| Nome               | Responsabilidade                                                         |
+| ------------------ | ------------------------------------------------------------------------ |
+| `AdicionarVeiculo` | Solicita a placa ao usuário e adiciona à lista de veículos               |
+| `RemoverVeiculo`   | Solicita a placa e horas estacionadas, calcula o valor e remove da lista |
+| `ListarVeiculos`   | Exibe todos os veículos cadastrados ou informa que não há nenhum         |
+
+---
+
+## Tecnologias Utilizadas
+
+* .NET 8
+* C#
+* Console Application
+* VS Code
+* Git
+
+---
+
+## Como Executar
+
+```bash
+# Clonar o repositório
+$ git clone https://github.com/luanamarques0/EstacionamentoDesafioUm.git
+$ cd EstacionamentoDesafioUm
+
+# Restaurar pacotes e compilar
+$ dotnet restore
+$ dotnet build
+
+# Executar
+$ dotnet run
+```
 
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.

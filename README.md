@@ -1,66 +1,62 @@
-# WEX - End to End Engineering -> 1° desafio: Sistema de Estacionamento
+# WEX – End-to-End Engineering
+## 1º Desafio : Sistema de Estacionamento
 
-> Projeto desenvolvido como parte do **desafio proposto na Trilha .NET – Fundamentos ** da [DIO](https://www.dio.me/).
+Projeto desenvolvido como parte do **Desafio “Sistema de Estacionamento”** da **[DIO – Trilha .NET / Fundamentos](https://www.dio.me)**.
 
----
-
-## Descrição
-
-Este projeto consiste em um **sistema de gerenciamento de estacionamento** em console, com as seguintes funcionalidades:
-
-* Cadastrar um veículo
-* Remover um veículo (calculando o valor a ser pago)
-* Listar veículos estacionados
-
-A proposta foi construída com base nos conhecimentos adquiridos no módulo de Fundamentos da trilha .NET.
+🔗 **Repositório original do desafio:**
+[digitalinnovationone/trilha-net-fundamentos-desafio](https://github.com/digitalinnovationone/trilha-net-fundamentos-desafio)
 
 ---
 
-## Estrutura da Classe `Estacionamento`
+## Funcionalidades
 
-A classe principal possui:
+| Ação | Descrição |
+|------|-----------|
+| **Cadastrar veículo** | Registra a placa digitada pelo usuário. |
+| **Remover veículo** | Solicita a placa, pede o nº de horas, calcula e mostra o valor devido. |
+| **Listar veículos**  | Exibe todas as placas atualmente estacionadas. |
+
+...
+
+## Estrutura da classe `Estacionamento`
 
 ### Propriedades
 
-| Nome           | Tipo           | Descrição                                     |
-| -------------- | -------------- | --------------------------------------------- |
-| `precoInicial` | `decimal`      | Valor fixo cobrado na entrada                 |
-| `precoPorHora` | `decimal`      | Valor cobrado por cada hora de permanência    |
-| `veiculos`     | `List<string>` | Lista com as placas dos veículos estacionados |
+| Propriedade | Tipo | Descrição |
+|-------------|------|-----------|
+| `precoInicial` | `decimal` | Valor fixo cobrado na entrada. |
+| `precoPorHora` | `decimal` | Valor cobrado por cada hora de permanência. |
+| `veiculos` | `List<string>` | Placas dos veículos estacionados. |
 
 ### Métodos
 
-| Nome               | Responsabilidade                                                         |
-| ------------------ | ------------------------------------------------------------------------ |
-| `AdicionarVeiculo` | Solicita a placa ao usuário e adiciona à lista de veículos               |
-| `RemoverVeiculo`   | Solicita a placa e horas estacionadas, calcula o valor e remove da lista |
-| `ListarVeiculos`   | Exibe todos os veículos cadastrados ou informa que não há nenhum         |
+| Método | Responsabilidade |
+|--------|------------------|
+| `AdicionarVeiculo` | Solicita a placa e a adiciona à lista. |
+| `RemoverVeiculo`   | Solicita placa + horas, calcula o valor e remove da lista. |
+| `ListarVeiculos`   | Exibe todos os veículos ou informa que não há nenhum. |
 
 ---
 
-## Tecnologias Utilizadas
+## Tecnologias
 
-* .NET 8
-* C#
-* Console Application
-* VS Code
-* Git
+- **.NET 8** / C#
+- **Console Application**
+- **VS Code** (editor)
+- **Git** (controle de versão)
 
 ---
 
-## Como Executar
+## Como executar
 
 ```bash
-# Clonar o repositório
-$ git clone https://github.com/luanamarques0/EstacionamentoDesafioUm.git
-$ cd EstacionamentoDesafioUm
+# 1. Clonar o repositório
+git clone https://github.com/luanamarques0/EstacionamentoDesafioUm.git
+cd EstacionamentoDesafioUm
 
-# Restaurar pacotes e compilar
-$ dotnet restore
-$ dotnet build
+# 2. Restaurar dependências e compilar
+dotnet restore
+dotnet build
 
-# Executar
-$ dotnet run
-```
-
-
+# 3. Executar
+dotnet run

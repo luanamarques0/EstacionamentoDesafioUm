@@ -68,6 +68,11 @@ namespace EstacionamentoDesafio.Models
                 }
                 else
                 {
+                    if (horas <= 0)
+                    {
+                        horas = 1;
+                    }
+
                     decimal valorTotal = precoInicial + precoPorHora * horas;
                     veiculos.Remove(placa);
                     Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
@@ -90,9 +95,11 @@ namespace EstacionamentoDesafio.Models
             {
                 Console.WriteLine("Os veículos estacionados são:");
 
-                foreach (string placa in veiculos)
+                Console.WriteLine($"{"Nº"}    {"Placa"}");
+                Console.WriteLine("-------------");
+                for (int i = 0; i < veiculos.Count; i++)
                 {
-                    Console.WriteLine($"- {placa}");
+                    Console.WriteLine($"{i + 1}    {veiculos[i]}");
                 }
             }
             else
